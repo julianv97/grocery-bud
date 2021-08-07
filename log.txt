@@ -1,0 +1,25 @@
+Listo:
+-el form para agregar items a la lista.
+-mostrar la lista si existen items.
+-actualizar localStorage según el State.
+
+
+Falta:
+-Iconos para editar o borrar cada items
+-función para editar item
+-función para borrar item
+
+-Modal:
+    -cuando se agrega item
+    -cuando se edita item
+    -cuando se elimina item
+    -cuando se elimina toda la lista
+
+Editar item:
+
+al hacer click en el botón para editar, el state del input pasa a ser el nombre de ese item, luego, para cambiarlo en la lista,
+busco el ID y retorno todo lo qu tenía y cambio el title del item buscado.
+
+editId, setEditId para trackear el id que se quere editar. Lo inicio en la función editItem y lo llevo al hanldeSumbit luego de aceptar la edición.
+
+editId es el Id que voy a usar para buscar en la lista.
