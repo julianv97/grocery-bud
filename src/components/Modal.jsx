@@ -7,7 +7,7 @@ function Modal({ type, msg, showModal, list }) {
       showModal();
     }, 2000);
     return () => clearTimeout(timeout);
-  }, [list]);
+  }, [list, showModal]);
 
   return (
     <div>
