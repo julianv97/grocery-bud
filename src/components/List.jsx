@@ -7,7 +7,7 @@ const List = ({ items, editItem, removeItem }) => {
       {items.map((item) => {
         const { id, title } = item;
         return (
-          <article key={id} className="flex py-4">
+          <article key={id} className="flex py-4 justify-between">
             <h3>{title}</h3>
 
             <div className="pl-6">

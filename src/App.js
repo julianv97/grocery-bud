@@ -56,8 +56,9 @@ function App() {
     setList(list.filter((item) => item.id !== id));
     //Aca tengo que limpiar el edit, para cuando se esté editando algo pero se decida eliminar el item
     setName("");
-    setIsEditing(false);
-    setEditId(null);
+    /* setIsEditing(false);
+    setEditId(null); */
+    clearEditState();
     showModal(true, "item removed", "danger");
   };
 
@@ -65,9 +66,15 @@ function App() {
     setList([]);
     setName("");
     //Aca tengo que limpiar el edit, para cuando se esté editando algo pero se decida eliminar el item
+    /* setIsEditing(false);
+    setEditId(null); */
+    clearEditState();
+    showModal(true, "empty list", "danger");
+  };
+
+  const clearEditState = () => {
     setIsEditing(false);
     setEditId(null);
-    showModal(true, "empty list", "danger")
   };
 
   const showModal = (show = false, msg = "", type = "") => {
@@ -104,15 +111,16 @@ function App() {
         </form>
 
         {list.length > 0 && (
-          <div>
+          <div className="w-full">
             {/*Falta crear y pasar como props a list: editItem */}
             <List items={list} editItem={editItem} removeItem={removeItem} />
-            <button onClick={clearList} className="capitalize">
+            <button onClick={clearList} className="capitalize text-red-600">
               clear items
             </button>
           </div>
         )}
       </section>
+
       <footer>by Julián Vicente</footer>
     </main>
   );

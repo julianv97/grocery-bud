@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 function Modal({ type, msg, showModal, list }) {
+  console.log(type);
   useEffect(() => {
     const timeout = setTimeout(() => {
       showModal();
@@ -10,7 +11,16 @@ function Modal({ type, msg, showModal, list }) {
 
   return (
     <div>
-      <h1> {msg} </h1>
+      <p
+        className={
+          type === "danger"
+            ? "text-red-600 bg-red-200"
+            : "text-green-600 bg-green-200"
+        }
+      >
+        {" "}
+        {msg}{" "}
+      </p>
     </div>
   );
 }

@@ -1,28 +1,32 @@
 Falta:
--función para editar item
-Editar item:
-
-al hacer click en el botón para editar, el state del input pasa a ser el nombre de ese item, luego, para cambiarlo en la lista,
-busco el ID y retorno todo lo qu tenía y cambio el title del item buscado.
-
-editId, setEditId para trackear el id que se quere editar. Lo inicio en la función editItem y lo llevo al hanldeSumbit luego de aceptar la edición.
-
-editId es el Id que voy a usar para buscar en la lista.
 
 
 -Modal:
-    -cuando se agrega item
-    -cuando se edita item
-    -cuando se elimina item
-    -cuando se elimina toda la lista
+    -el modal tiene distintos estilos depende que se muestra:
+        -rojo para cuando se elimina, verde para cuando se agrega o se edita con éxito
 
-    -el modal tiene distintos estilos depende que se muestra
 
--Casos al agregar un item:
-    -que no se escriba nada (!item)
-    -que es esté editando un item existente (item && isEditing)
-    -que esté todo bien
 
 -Elegir colores para modo nocturno/normal (ojear pancakewsap)
 
 -Separar en mini componentes
+
+
+
+-Listo
+
+
+    -Refactorizado:
+        -Funcion para unificar el limpiado del editId
+
+    -función para editar item
+        Editar item:
+        al hacer click en el botón para editar, el state del input pasa a ser el nombre de ese item, luego, para cambiarlo en la        lista,
+        busco el ID y retorno todo lo qu tenía y cambio el title del item buscado.
+        editId, setEditId para trackear el id que se quere editar. Lo inicio en la función editItem y lo llevo al hanldeSumbit      luego de aceptar la edición.
+        editId es el Id que voy a usar para buscar en la lista.
+
+    -Casos al agregar un item:
+        -que no se escriba nada (!item)
+        -que es esté editando un item existente (item && isEditing)
+        -que esté todo bien
