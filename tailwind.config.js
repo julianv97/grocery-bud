@@ -29,11 +29,11 @@ module.exports = {
     extend: {
       colors: {
         "light-gray": "#fff",
-        "light-black":"#282c35",
-        "light-primary":"#d23669",
-        "dark-black":"#282c35",
+        "light-black": "#282c35",
+        "light-primary": "#d23669",
+        "dark-black": "#282c35",
         "dark-gray": "#fff",
-        "dark-primary":"#ffa7c4"
+        "dark-primary": "#ffa7c4",
       },
     },
   },

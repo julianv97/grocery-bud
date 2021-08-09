@@ -8,7 +8,7 @@ const List = ({ items, editItem, removeItem }) => {
         const { id, title } = item;
         return (
           <article key={id} className="flex py-4 justify-between px-10 border-b">
-            <h3 className="text-light-primary capitalize font-bold">{title}</h3>
+            <h3 className="text-gray-700 text-sm capitalize font-semibold">{title}</h3>
 
             <div className="pl-6">
               <button type="button" onClick={() => editItem(id)}>
