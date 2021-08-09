@@ -19,6 +19,7 @@ function ListItem({ title, editItem, removeItem, id }) {
       <h3 className="text-gray-900 dark:text-dark-gray transition duration-500 text-sm capitalize font-semibold">
         {title}
       </h3>
+      
       <ButtonsList
         isHidden={isHidden}
         editItem={editItem}
