@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import List from "./components/List";
 import Modal from "./components/Modal";
 import { BsMoon, BsSun } from "react-icons/bs";
-
+import useDarkMode from "./customHooks/useDarkMode";
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
   if (list) {
@@ -10,14 +10,6 @@ const getLocalStorage = () => {
   } else {
     return [];
   }
-};
-const getStorageTheme = () => {
-  let theme = "light";
-  if (localStorage.getItem("theme")) {
-    theme = localStorage.getItem("theme");
-    console.log(theme);
-  }
-  return theme;
 };
 
 /* const lightThemeStyles = {
@@ -30,16 +22,8 @@ function App() {
   const [editId, setEditId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [modal, setModal] = useState({ show: false, msg: "", type: "" });
-  const [theme, setTheme] = useState(getStorageTheme());
-  console.log(theme);
 
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  const [colorTheme, setTheme] = useDarkMode();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -112,23 +96,25 @@ function App() {
   return (
     <div
       className={
-        "{theme} bg-gray-100 flex flex-col items-center dark:bg-red-600"
+        "  bg-gray-100 flex flex-col items-center dark:bg-gray-700 transition duration-500"
       }
     >
-      <header className="fixed w-full p-6 flex justify-end items-center">
-        <button>
-          <BsMoon onClick={toggleTheme} />
-          <BsSun />
-        </button>
+      <header className="fixed w-full z-10 p-6  flex justify-end items-center">
+        <span
+          onClick={() => setTheme(colorTheme)}
+          className="cursor-pointer dark:text-white p-10"
+        >
+          {colorTheme === "light" ? <BsSun /> : <BsMoon />}
+        </span>
       </header>
-      <main className="flex flex-col  items-center justify-center min-h-screen w-11/12  bg-gray-100 ">
+      <main className="flex flex-col  items-center justify-center min-h-screen w-11/12  bg-gray-100 dark:bg-gray-700 transition duration-500">
         {modal.show && <Modal {...modal} showModal={showModal} list={list} />}
-        <section className="bg-light-gray w-11/12 md:w-7/12 lg:w-5/12 py-10 flex flex-col items-center rounded-md shadow-xl">
+        <section className="bg-light-gray dark:bg-light-black w-11/12 md:w-8/12 lg:w-6/12  py-10 flex h-full flex-col items-center rounded-md shadow-xl transition duration-500">
           <form
             onSubmit={handleSubmit}
             className="w-full flex flex-col items-center"
           >
-            <h1 className="capitalize pb-4 text-light-primary text-2xl font-semibold">
+            <h1 className="capitalize  pb-4 text-light-primary   text-2xl font-semibold transition duration-500">
               grocery bud
             </h1>
             <div className=" w-full px-6">
@@ -136,9 +122,9 @@ function App() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-gray-200 w-9/12 md:w-10/12 focus:border-blue-300 rounded-l-lg text-light-black outline-none"
+                className="bg-gray-200 dark:bg-gray-500 w-8/12 md:w-10/12 focus:border-blue-300 rounded-l-lg pl-4 text-light-black transition duration-500 outline-none"
               />
-              <button className="w-3/12 md:w-2/12 capitalize text-light-primary font-semibold hover:bg-light-primary hover:text-dark-gray transition ease-in duration-300 rounded-r-lg">
+              <button className="w-4/12  md:w-2/12 capitalize text-light-primary font-semibold hover:bg-light-primary hover:text-dark-gray transition ease-in duration-300 rounded-r-lg">
                 {isEditing ? "edit" : "add item"}
               </button>
             </div>
@@ -160,7 +146,9 @@ function App() {
           )}
         </section>
 
-        <footer className="text-light-black text-md">by Julián Vicente</footer>
+        <footer className="text-light-black text-md dark:text-gray-100 transition duration-500">
+          by Julián Vicente
+        </footer>
       </main>
     </div>
   );

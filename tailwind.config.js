@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     minHeight: {
       0: "0",
@@ -11,10 +11,10 @@ module.exports = {
       screen: "100vh",
     },
     screens: {
-      sm: "340px",
+      sm: "300px",
       // => @media (min-width: 340x) { ... }
 
-      md: "768px",
+      md: "860px",
       // => @media (min-width: 768px) { ... }
 
       lg: "1024px",

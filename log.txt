@@ -1,17 +1,13 @@
 Falta:
 
--Color lista gray-800?
--Color clear items más ocsuro?
-
 -Modal:
     -el modal tiene distintos estilos depende que se muestra:
         -rojo para cuando se elimina, verde para cuando se agrega o se edita con éxito
 
 
-
 -Elegir colores para modo nocturno/normal (ojear pancakewsap)
 
--Separar en mini componentes
+
 
 
 

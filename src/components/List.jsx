@@ -3,8 +3,6 @@ import React from "react";
 import ListItem from "./ListItem";
 
 const List = ({ items, editItem, removeItem }) => {
-
-
   return (
     <div className="py-6">
       {items.map((item) => {
