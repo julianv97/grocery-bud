@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import List from "./components/List";
 import Modal from "./components/Modal";
+import { BsMoon, BsSun } from "react-icons/bs";
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
@@ -11,12 +12,17 @@ const getLocalStorage = () => {
   }
 };
 
+const lightThemeStyles = {
+  
+}
+
 function App() {
   const [name, setName] = useState("");
   const [list, setList] = useState(getLocalStorage());
   const [editId, setEditId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [modal, setModal] = useState({ show: false, msg: "", type: "" });
+  const [theme, setTheme] = useState('light-theme')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -89,40 +95,49 @@ function App() {
   console.log(list);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen	bg-gray-100">
+    <div className="bg-gray-100 flex flex-col items-center ">
+    <header className="fixed w-full p-6 flex justify-end items-center">
+      <button>
+      <BsMoon />
+      <BsSun />
+      </button>
+    </header>
+    <main className="flex flex-col  items-center justify-center min-h-screen w-11/12  bg-gray-100 ">
       {modal.show && <Modal {...modal} showModal={showModal} list={list} />}
-      <section className="bg-gray-300 w-10/12 md:w-7/12 lg:w-5/12 py-10 flex flex-col items-center shadow-xl">
+      <section className="bg-light-gray w-11/12 md:w-7/12 lg:w-5/12 py-10 flex flex-col items-center rounded-md shadow-xl">
+        
         <form
           onSubmit={handleSubmit}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="capitalize pb-4">grocery bud</h1>
-          <div className="500 w-full px-6">
+          <h1 className="capitalize pb-4 text-light-primary text-2xl font-semibold">grocery bud</h1>
+          <div className=" w-full px-6">
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border-2  w-10/12"
+              className="bg-gray-200 w-9/12 md:w-10/12 focus:border-blue-300 rounded-l-lg text-light-black outline-none"
             />
-            <button className="w-2/12 capitalize">
+            <button className="w-3/12 md:w-2/12 capitalize text-light-primary font-semibold hover:bg-light-primary hover:text-dark-gray transition ease-in duration-300 rounded-r-lg">
               {isEditing ? "edit" : "add item"}
             </button>
           </div>
         </form>
 
         {list.length > 0 && (
-          <div className="w-full">
+          <div className="w-full flex flex-col">
             {/*Falta crear y pasar como props a list: editItem */}
             <List items={list} editItem={editItem} removeItem={removeItem} />
-            <button onClick={clearList} className="capitalize text-red-600">
+            <button onClick={clearList} className="capitalize text-red-400 font-bold">
               clear items
             </button>
           </div>
         )}
       </section>
 
-      <footer>by Julián Vicente</footer>
+      <footer className="text-light-black text-md">by Julián Vicente</footer>
     </main>
+    </div>
   );
 }
 

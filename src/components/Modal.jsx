@@ -18,8 +18,7 @@ function Modal({ type, msg, showModal, list }) {
             : "text-green-600 bg-green-200"
         }
       >
-        {" "}
-        {msg}{" "}
+        {msg}
       </p>
     </div>
   );

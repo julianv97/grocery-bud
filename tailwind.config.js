@@ -26,7 +26,16 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      colors: {
+        "light-gray": "#fff",
+        "light-black":"#282c35",
+        "light-primary":"#d23669",
+        "dark-black":"#282c35",
+        "dark-gray": "#fff",
+        "dark-primary":"#ffa7c4"
+      },
+    },
   },
   variants: {
     extend: {},
