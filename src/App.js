@@ -11,6 +11,14 @@ const getLocalStorage = () => {
     return [];
   }
 };
+const getStorageTheme = () => {
+  let theme = "light";
+  if (localStorage.getItem("theme")) {
+    theme = localStorage.getItem("theme");
+    console.log(theme);
+  }
+  return theme;
+};
 
 /* const lightThemeStyles = {
   
@@ -22,7 +30,16 @@ function App() {
   const [editId, setEditId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [modal, setModal] = useState({ show: false, msg: "", type: "" });
-  /* const [theme, setTheme] = useState('light-theme') */
+  const [theme, setTheme] = useState(getStorageTheme());
+  console.log(theme);
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -92,13 +109,15 @@ function App() {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
 
-  console.log(list);
-
   return (
-    <div className="bg-gray-100 flex flex-col items-center ">
+    <div
+      className={
+        "{theme} bg-gray-100 flex flex-col items-center dark:bg-red-600"
+      }
+    >
       <header className="fixed w-full p-6 flex justify-end items-center">
         <button>
-          <BsMoon />
+          <BsMoon onClick={toggleTheme} />
           <BsSun />
         </button>
       </header>
@@ -132,7 +151,7 @@ function App() {
               <div className="w-full flex items-center justify-center">
                 <button
                   onClick={clearList}
-                  className="capitalize text-red-500 font-semibold hover:bg-red-500 hover:text-dark-gray w-4/12 transition ease-in duration-200 rounded-lg"
+                  className="capitalize text-light-primary font-semibold hover:bg-light-primary hover:text-dark-gray w-4/12 transition ease-in duration-200 rounded-lg"
                 >
                   clear items
                 </button>
