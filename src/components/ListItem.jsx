@@ -16,7 +16,7 @@ function ListItem({ title, editItem, removeItem, id }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h3 className="text-gray-900 dark:text-dark-gray text-sm capitalize font-semibold">
+      <h3 className="text-gray-900 dark:text-dark-gray transition duration-500 text-sm capitalize font-semibold">
         {title}
       </h3>
       <ButtonsList
