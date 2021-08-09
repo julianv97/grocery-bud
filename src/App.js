@@ -107,7 +107,7 @@ function App() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-gray-200 dark:bg-gray-500 w-8/12 md:w-10/12 focus:border-blue-300 rounded-l-lg pl-4 text-light-black transition duration-500 outline-none dark:text-gray-100"
+                className="bg-gray-200 dark:bg-gray-500 w-8/12 md:w-10/12 focus:border-blue-300 rounded-l-lg pl-4 text-light-black transition duration-500 outline-none dark:text-gray-100 font-semibold"
               />
               <button className="w-4/12  md:w-2/12 capitalize text-light-primary font-semibold hover:bg-light-primary hover:text-dark-gray transition ease-in duration-300 rounded-r-lg">
                 {isEditing ? "edit" : "add item"}
