@@ -12,11 +12,11 @@ function ButtonsList({ isHidden, editItem, removeItem, id }) {
       }
     >
       <button type="button" onClick={() => editItem(id)}>
-        <FaEdit className="text-gray-600 dark:text-gray-200  text-sm " />
+        <FaEdit className="text-gray-700 dark:text-gray-200  text-sm " />
       </button>
 
       <button type="button" onClick={() => removeItem(id)} className="px-2">
-        <FaTrash className="text-gray-600 dark:text-gray-200 text-sm" />
+        <FaTrash className="text-gray-700 dark:text-gray-200 text-sm" />
       </button>
     </div>
   );

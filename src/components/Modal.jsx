@@ -10,16 +10,8 @@ function Modal({ type, msg, showModal, list }) {
   }, [list, showModal]);
 
   return (
-    <div>
-      <p
-        className={
-          type === "danger"
-            ? "text-red-600 bg-red-200"
-            : "text-green-600 bg-green-200"
-        }
-      >
-        {msg}
-      </p>
+    <div className="bg-gray-400 dark:bg-light-black rounded-lg w-11/12 md:w-8/12 lg:w-6/12 flex items-center justify-center mb-4">
+      <p className="capitalize text-gray-900 font-semibold dark:text-gray-200">{msg}</p>
     </div>
   );
 }
