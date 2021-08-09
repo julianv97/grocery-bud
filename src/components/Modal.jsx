@@ -10,7 +10,7 @@ function Modal({ type, msg, showModal, list }) {
   }, [list, showModal]);
 
   return (
-    <div className="bg-gray-400 dark:bg-light-black rounded-lg w-11/12 md:w-8/12 lg:w-6/12 flex items-center justify-center mb-4">
+    <div className="bg-gray-300 dark:bg-light-black rounded-lg w-5/12 md:w-3/12 lg:w-2/12 flex items-center justify-center mb-4">
       <p className="capitalize text-gray-900 font-semibold dark:text-gray-200">{msg}</p>
     </div>
   );
