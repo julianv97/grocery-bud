@@ -12,9 +12,9 @@ const getLocalStorage = () => {
   }
 };
 
-const lightThemeStyles = {
+/* const lightThemeStyles = {
   
-}
+} */
 
 function App() {
   const [name, setName] = useState("");
@@ -22,7 +22,7 @@ function App() {
   const [editId, setEditId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [modal, setModal] = useState({ show: false, msg: "", type: "" });
-  const [theme, setTheme] = useState('light-theme')
+  /* const [theme, setTheme] = useState('light-theme') */
 
   const handleSubmit = (e) => {
     e.preventDefault();
