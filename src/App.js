@@ -132,7 +132,7 @@ function App() {
               <div className="w-full flex items-center justify-center">
                 <button
                   onClick={clearList}
-                  className="capitalize text-red-400 font-bold hover:bg-red-400 hover:text-dark-gray w-4/12 transition ease-in duration-200 rounded-lg"
+                  className="capitalize text-red-500 font-semibold hover:bg-red-500 hover:text-dark-gray w-4/12 transition ease-in duration-200 rounded-lg"
                 >
                   clear items
                 </button>

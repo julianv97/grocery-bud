@@ -1,5 +1,7 @@
 Falta:
 
+-Color lista gray-800?
+-Color clear items más ocsuro?
 
 -Modal:
     -el modal tiene distintos estilos depende que se muestra:

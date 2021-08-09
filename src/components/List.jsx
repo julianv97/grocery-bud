@@ -7,8 +7,8 @@ const List = ({ items, editItem, removeItem }) => {
       {items.map((item) => {
         const { id, title } = item;
         return (
-          <article key={id} className="flex py-4 justify-between px-10 border-b">
-            <h3 className="text-gray-700 text-sm capitalize font-semibold">{title}</h3>
+          <article key={id} className="flex py-3 justify-between px-10 border-b">
+            <h3 className="text-gray-900 text-sm capitalize font-semibold">{title}</h3>
 
             <div className="pl-6">
               <button type="button" onClick={() => editItem(id)}>
