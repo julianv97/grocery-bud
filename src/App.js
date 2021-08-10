@@ -94,7 +94,7 @@ function App() {
       </header>
       <main className="flex flex-col  items-center justify-center min-h-screen w-11/12  bg-gray-100 dark:bg-gray-700 transition duration-500">
         {modal.show && <Modal {...modal} showModal={showModal} list={list} />}
-        <section className="bg-light-gray dark:bg-light-black w-11/12 md:w-8/12 lg:w-6/12  py-10 flex h-full  flex-col items-center rounded-md shadow-xl transition duration-500">
+        <section className="bg-light-gray dark:bg-light-black w-10/12 md:w-8/12 lg:w-6/12 mt-2 py-10 flex h-full  flex-col items-center rounded-md shadow-xl transition duration-500">
           <form
             onSubmit={handleSubmit}
             className="w-full flex flex-col items-center"
